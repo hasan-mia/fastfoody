@@ -1,0 +1,36 @@
+/* 
+* Author: Hasan
+* Github: https://github.com/hasanrafi69
+* Email: hasanrafi69@gmail.com
+* Mobile: +880-161-782323
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.bg-pink {
+    background-color: #ff0082!important;
+}
+
+
+/* Header */
+
+.logo {
+    font-size: 2rem;
+}
+
+
+/* footer */
+
+footer p {
+    margin-bottom: 0;
+}
