@@ -21,10 +21,10 @@ const displayCategory = (categorlist) => {
     for (const category of allcategory) {
         // console.log(category.strCategory);
         const div = document.createElement('div');
-        div.classList.add('col-lg-4')
+        div.classList.add('col-lg-6')
         div.classList.add('col-6')
         div.innerHTML = `
-        <a onclick="categoryProduct()">
+        <a href="#" onclick="categoryProduct('${category.strCategory}')" class="text-decoration-none text-black">
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
@@ -32,8 +32,8 @@ const displayCategory = (categorlist) => {
                 </div>
                 <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">${category.strCategory}</h5>
-                    <p class="card-text">${category.strCategoryDescription.slice(0,30)}</p>
+                    <h3 class="card-title fw-bold pink">${category.strCategory}</h3>
+                    <p class="card-text">${category.strCategoryDescription.slice(0,55)}</p>
                 </div>
                 </div>
             </div>
@@ -46,25 +46,25 @@ const displayCategory = (categorlist) => {
 }
 
 // ===========Category Wise Prodduct============
-const categoryProduct = () => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef`)
+const categoryProduct = (strCategory) => {
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${strCategory}`)
         .then(res => res.json())
         .then(data => categoryProductList(data.meals))
 }
 const categoryProductList = (productlists) => {
     row.innerHTML = ''
     for (const productlist of productlists) {
-        console.log(productlist)
+        console.log(productlist.idMeal)
         const div = document.createElement('div');
         div.classList.add('col-lg-4')
         div.innerHTML = `
         <div class="card py-1">
             <img src="${productlist.strMealThumb}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${productlist.strMeal}</h5>
+                <h4 class="card-title fw-bold pink">${productlist.strMeal}</h4>
             </div>
-            <div class="card-footer w-100">
-                <button class="btn btn-primary">View</button>
+            <div class="card-footer w-100 text-center">
+                <button class="btn pink" onclick="productDetails(${productlist.idMeal})"> <i class="fas fa-eye fa-2x"></i> </button>
             </div>
         </div>
     `
@@ -72,4 +72,37 @@ const categoryProductList = (productlists) => {
     }
 
 
+}
+
+// ==============Product Details================
+const productDetails = (productId) => {
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${productId}`)
+        .then(res => res.json())
+        .then(data => productShow(data.meals))
+}
+const productShow = (pdetails) => {
+    // console.log(pdetails[0])
+    row.textContent = '';
+    for (const product of pdetails) {
+        console.log(product)
+        const div = document.createElement('div');
+        div.classList.add('col-lg-12');
+        div.innerHTML = `
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="${product.strMealThumb}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 class="card-title fw-bold pink">${product.strMeal}</h2>
+                        <p class="card-text">${product.strInstructions}</p>
+                        <a class="card-text text-center" href="${product.strYoutube}" target="_blank"> <i class="fab fa-youtube-square fa-3x pink"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `
+        row.appendChild(div)
+    }
 }
