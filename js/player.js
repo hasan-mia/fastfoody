@@ -1,9 +1,3 @@
-/* 
- * Author: Hasan
- * Github: https://github.com/hasanrafi69
- * Email: hasanrafi69@gmail.com
- * Mobile: +880-161-782323
- */
 // =========Fetch Contry Name==========
 const frontEnd = () => {
     fetch('https://www.thesportsdb.com/api/v1/json/2/all_countries.php')
