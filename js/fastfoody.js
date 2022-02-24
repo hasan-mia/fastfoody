@@ -5,8 +5,7 @@
  * Mobile: +880-161-782323
  */
 
-// All Variable
-// const categoryProductList = document.getElementById('productlist');
+// row Variable
 const row = document.getElementById('row');
 
 // =========Fetch Food Name==========
@@ -54,7 +53,7 @@ const categoryProduct = (strCategory) => {
 const categoryProductList = (productlists) => {
     row.innerHTML = ''
     for (const productlist of productlists) {
-        console.log(productlist.idMeal)
+        // console.log(productlist.idMeal)
         const div = document.createElement('div');
         div.classList.add('col-lg-4')
         div.innerHTML = `
@@ -84,20 +83,23 @@ const productShow = (pdetails) => {
     // console.log(pdetails[0])
     row.textContent = '';
     for (const product of pdetails) {
-        console.log(product)
+        // console.log(product)
         const div = document.createElement('div');
         div.classList.add('col-lg-12');
         div.innerHTML = `
-        <div class="card mb-3">
+        <div class="card mb-5">
             <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="${product.strMealThumb}" class="img-fluid rounded-start" alt="...">
+                <div class="col-md-5">
+                    <img src="${product.strMealThumb}" class="img-fluid rounded-start h-100 py-3 ps-1" alt="...">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <div class="card-body">
                         <h2 class="card-title fw-bold pink">${product.strMeal}</h2>
-                        <p class="card-text">${product.strInstructions}</p>
-                        <a class="card-text text-center" href="${product.strYoutube}" target="_blank"> <i class="fab fa-youtube-square fa-3x pink"></i> </a>
+                        <p class="card-text text-justify fs-5">${product.strInstructions}</p>
+                    </div>
+                    <div class="cart text-center d-flex justify-content-between px-3">
+                    <a class="card-text text-center" href="${product.strYoutube}" target="_blank"> <i class="fab fa-youtube-square fa-3x pink"></i> </a>
+                        <button class="btn bg-pink text-white fs-4 fw-bold">Buy Now</button>
                     </div>
                 </div>
             </div>
