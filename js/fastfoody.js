@@ -24,7 +24,7 @@ const displayCategory = (categorlist) => {
         div.classList.add('col-6')
         div.innerHTML = `
         <a href="#" onclick="categoryProduct('${category.strCategory}')" class="text-decoration-none text-black">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 border-pink" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
                 <img src="${category.strCategoryThumb}" class="img-fluid rounded-start" alt="...">
@@ -95,6 +95,12 @@ const productShow = (pdetails) => {
                 <div class="col-md-7">
                     <div class="card-body">
                         <h2 class="card-title fw-bold pink">${product.strMeal}</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item active"><a href="index.html" class="text-decoration-none pink">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">${product.strCategory}</li>
+                            </ol>
+                        </nav>
                         <p class="card-text text-justify fs-5">${product.strInstructions}</p>
                     </div>
                     <div class="cart text-center d-flex justify-content-between px-3">
