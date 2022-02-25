@@ -95,10 +95,10 @@ const productShow = (pdetails) => {
         div.innerHTML = `
         <div class="card mb-5">
             <div class="row g-0">
-                <div class="col-md-5">
-                    <img src="${product.strMealThumb}" class="img-fluid rounded-start h-100 py-3 ps-1" alt="...">
+                <div class="col-12">
+                    <img src="${product.strMealThumb}" class="img-fluid rounded-start w-100 py-3 ps-1" alt="...">
                 </div>
-                <div class="col-md-7">
+                <div class="col-12">
                     <div class="card-body">
                         <h2 class="card-title fw-bold pink">${product.strMeal}</h2>
                         <nav aria-label="breadcrumb">
