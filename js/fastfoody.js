@@ -57,7 +57,8 @@ const categoryProduct = (strCategory) => {
         .then(data => categoryProductList(data.meals))
 }
 const categoryProductList = (productlists) => {
-    row.innerHTML = ''
+    row.innerHTML = '';
+    errorId.textContent = '';
     for (const productlist of productlists) {
         // console.log(productlist.idMeal)
         const div = document.createElement('div');
@@ -88,6 +89,7 @@ const productDetails = (productId) => {
 const productShow = (pdetails) => {
     // console.log(pdetails[0])
     row.textContent = '';
+    errorId.textContent = '';
     for (const product of pdetails) {
         // console.log(product)
         const div = document.createElement('div');
@@ -111,7 +113,7 @@ const productShow = (pdetails) => {
                     </div>
                     <div class="cart text-center d-flex justify-content-between px-3">
                     <a class="card-text text-center" href="${product.strYoutube}" target="_blank"> <i class="fab fa-youtube-square fa-3x pink"></i> </a>
-                        <button class="btn bg-pink text-white fs-4 fw-bold">Buy Now</button>
+                        <button class="btn bg-pink text-white fs-4 fw-bold" onclick="addCart()">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -120,6 +122,15 @@ const productShow = (pdetails) => {
         row.appendChild(div);
     }
 };
+
+// =============Add Cart=============
+const cartId = document.getElementById('cart');
+let cart = parseInt(cartId.innerText);
+const addCart = () => {
+    cart++;
+    cartId.innerText = cart;
+    // console.log(cart)
+}
 
 // =================Search Product===============
 const searchBar = () => {
@@ -137,7 +148,7 @@ const searchBar = () => {
 };
 
 const searchResult = (searchresults) => {
-    row.textContent = ''
+    row.textContent = '';
     searchId.value = '';
     searchresults.forEach(searchresult => {
         // console.log(searchresult.strMeal)
