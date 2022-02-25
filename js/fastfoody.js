@@ -111,6 +111,36 @@ const productShow = (pdetails) => {
             </div>
         </div>
         `
-        row.appendChild(div)
+        row.appendChild(div);
     }
+};
+
+// =================Search Product===============
+const searchBar = () => {
+    const searchId = document.getElementById('search');
+    const searchValue = searchId.value;
+    // console.log(searchValue);
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
+        .then(res => res.json())
+        .then(data => searchResult(data.meals))
+}
+const searchResult = (searchresults) => {
+    row.textContent = ''
+    searchresults.forEach(searchresult => {
+        console.log(searchresult.strMeal)
+        const div = document.createElement('div');
+        div.classList.add('col-lg-4')
+        div.innerHTML = `
+        <div class="card py-1">
+            <img src="${searchresult.strMealThumb}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="card-title fw-bold pink">${searchresult.strMeal}</h4>
+            </div>
+            <div class="card-footer w-100 text-center">
+                <button class="btn pink" onclick="productDetails(${searchresult.idMeal})"> <i class="fas fa-eye fa-2x"></i> </button>
+            </div>
+        </div>
+    `
+        row.appendChild(div);
+    })
 }
