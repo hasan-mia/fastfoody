@@ -7,7 +7,13 @@
 
 // row Variable
 const row = document.getElementById('row');
-
+const searchId = document.getElementById('search');
+const errorId = document.getElementById('error');
+// Error 
+const showError = (error) => {
+    errorId.className = 'd-block text-center text-danger fw-bold fs-4';
+    return errorId.className;
+};
 // =========Fetch Food Name==========
 const category = () => {
     fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
@@ -42,7 +48,7 @@ const displayCategory = (categorlist) => {
         row.appendChild(div)
     }
 
-}
+};
 
 // ===========Category Wise Prodduct============
 const categoryProduct = (strCategory) => {
@@ -117,17 +123,24 @@ const productShow = (pdetails) => {
 
 // =================Search Product===============
 const searchBar = () => {
-    const searchId = document.getElementById('search');
     const searchValue = searchId.value;
-    // console.log(searchValue);
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
-        .then(res => res.json())
-        .then(data => searchResult(data.meals))
-}
+    if (searchValue == '') {
+        errorId.className = 'd-block text-center text-danger fw-bold fs-4'
+
+    } else {
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
+            .then(res => res.json())
+            .then(data => searchResult(data.meals))
+            .catch(error => showError(error));
+    }
+
+};
+
 const searchResult = (searchresults) => {
     row.textContent = ''
+    searchId.value = '';
     searchresults.forEach(searchresult => {
-        console.log(searchresult.strMeal)
+        // console.log(searchresult.strMeal)
         const div = document.createElement('div');
         div.classList.add('col-lg-4')
         div.innerHTML = `
