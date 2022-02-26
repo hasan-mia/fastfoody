@@ -1,22 +1,31 @@
 // =========Fetch Contry Name==========
-const frontEnd = () => {
-    fetch('https://www.thesportsdb.com/api/v1/json/2/all_countries.php')
+const country = () => {
+    fetch(`https://restcountries.com/v2/all`)
         .then(res => res.json())
-        .then(data => displayFrontend(data))
+        .then(data => countryRegion(data))
 }
-const displayFrontend = (countrylist) => {
-    const contries = document.getElementById('contries');
-    // const country20 = countrylist.slice(0, 20);
-    console.log(countrylist.countries);
-    for (const country of countrylist.countries) {
-        console.log(country.name_en)
+const countryRegion = (region) => {
+    console.log(region);
+    region.forEach(des => {
+        console.log(des)
         const div = document.createElement('div');
-        div.classList.add('col-lg-4')
-        div.classList.add('col-6')
+        div.classList.add('col-lg-3');
         div.innerHTML = `
-        <h1>${country.name_en}</h1>
+        <div class="card py-1">
+            <img src="${des.flag}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="card-title fw-bold pink card-footer">${des.name}</h4>
+                <div class="d-flex justify-content-between">
+                    <p class="card-text text-justify">Capital: ${des.capital}</p>
+                    <p class="card-text text-justify">Area: ${des.area}</p>
+                </div>
+                <div class="d-flex justify-content-between card-footer">
+                    <p class="card-text text-justify">Region: ${des.region}</p>
+                    <p class="card-text text-justify">Population: ${des.population}</p>
+                </div>
+            </div>
+        </div>
         `
-        contries.appendChild(div)
-    }
-
+        row.appendChild(div);
+    })
 }
