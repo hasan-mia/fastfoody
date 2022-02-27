@@ -98,9 +98,8 @@ const productShow = (pdetails) => {
         <div class="card mb-5">
             <div class="row g-0">
                 <div class="col-12">
-                    <img src="${product.strMealThumb}" class="img-fluid rounded-start w-100 py-3 ps-1" alt="...">
-                </div>
-                <div class="col-12">
+                    <img src="${product.strMealThumb}" class="img-fluid rounded-start h-25 w-100 py-3 ps-1" alt="...">
+                
                     <div class="card-body">
                         <h2 class="card-title fw-bold pink">${product.strMeal}</h2>
                         <nav aria-label="breadcrumb">
