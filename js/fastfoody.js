@@ -26,8 +26,7 @@ const displayCategory = (categorlist) => {
     for (const category of allcategory) {
         // console.log(category.strCategory);
         const div = document.createElement('div');
-        div.classList.add('col-lg-6')
-        div.classList.add('col-6')
+        div.className = "col-lg-6 col-md-6 col-12"
         div.innerHTML = `
         <a href="#" onclick="categoryProduct('${category.strCategory}')" class="text-decoration-none text-black">
         <div class="card mb-3 border-pink" style="max-width: 540px;">
@@ -62,7 +61,7 @@ const categoryProductList = (productlists) => {
     for (const productlist of productlists) {
         // console.log(productlist.idMeal)
         const div = document.createElement('div');
-        div.classList.add('col-lg-4')
+        div.className ='col-lg-4 col-md-6 col-12';
         div.innerHTML = `
         <div class="card py-1">
             <img src="${productlist.strMealThumb}" class="card-img-top" alt="...">
@@ -152,7 +151,7 @@ const searchResult = (searchresults) => {
     searchresults.forEach(searchresult => {
         // console.log(searchresult.strMeal)
         const div = document.createElement('div');
-        div.classList.add('col-lg-4')
+        div.className ='col-lg-4  col-md-6 col-12'
         div.innerHTML = `
         <div class="card py-1">
             <img src="${searchresult.strMealThumb}" class="card-img-top" alt="...">

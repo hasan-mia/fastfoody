@@ -1,0 +1,97 @@
+<!--  <section class="py-3" id="gallery">
+                <div class="container">
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-default filter-button" data-filter="all">All Phone</button>
+                            <button class="btn btn-default filter-button" data-filter="hdpe">Iphone</button>
+                            <button class="btn btn-default filter-button" data-filter="sprinkle ">Samsung</button>
+                            <button class="btn btn-default filter-button" data-filter="spray">Sony</button>
+                            <button class="btn btn-default filter-button" data-filter="irrigation ">Others</button>
+                        </div>
+                        <div class="gallery_product col-md-4 col-sm-6 filter hdpe ">
+                            <a href="#"> <img src=https://res.cloudinary.com/dxfq3iotg/image/upload/v1564033828/Restaurant/img-1.jpg class="w-100 "></a>
+                        </div>
+                       <div class="gallery_product col-md-4 col-6 filter sprinkle ">
+                            <a href="#"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1564033829/Restaurant/img-6.jpg " class="w-100 "></a>
+                        </div>
+                        <div class="gallery_product col-md-4 col-6 filter hdpe ">
+                            <a href="#"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1564033828/Restaurant/img-3.jpg " class="w-100 "></a>
+                        </div>
+                        <div class="gallery_product col-md-4 col-6 filter irrigation ">
+                            <a href="#"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1564033828/Restaurant/img-4.jpg " class="w-100 "></a>
+                        </div>
+                        <div class="gallery_product col-md-4 col-6 filter spray ">
+                            <a href="#"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1564033828/Restaurant/img-5.jpg " class="w-100 "></a>
+                        </div>
+                        <div class="gallery_product col-md-4 col-6 filter irrigation ">
+                            <a href="#"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1564033829/Restaurant/img-2.jpg " class="w-100 "></a>
+                        </div>
+                        <div class="gallery_product col-md-4 col-6 filter spray ">
+                            <a href="#"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1564033829/Restaurant/img-7.jpg " class="w-100 "></a>
+                        </div>
+                        <div class="gallery_product col-md-4 col-6 filter irrigation ">
+                            <a href="#"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1564033828/Restaurant/img-3.jpg " class="w-100 "></a>
+                        </div>
+                        <div class="gallery_product col-md-4 col-6 filter irrigation ">
+                            <a href="#"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1564033828/Restaurant/img-5.jpg " class="w-100 "></a>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- end gallery -->
+
+
+/* ========Gallery========= */
+
+/* .gallery-title {
+    font-size: 36px;
+    color: #FFA500;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px
+}
+
+.gallery-title:after {
+    content: "";
+    position: absolute;
+    width: 22.5%;
+    left: 38.5%;
+    height: 45px;
+    border-bottom: 1px solid #5e5e5e
+}
+
+.filter-button {
+    font-size: 18px;
+    border: 1px solid #0d6efd;
+    border-radius: 5px;
+    text-align: center;
+    color: #0d6efd;
+    margin-bottom: 30px
+}
+
+.filter-button:hover {
+    font-size: 18px;
+    border: 1px solid #0d6efd;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #0d6efd
+}
+
+.btn-default:active .filter-button:active {
+    background-color: #0d6efd;
+    color: white
+}
+
+.port-image {
+    width: 100%
+}
+
+.gallery_product {
+    margin-bottom: 30px
+}
+
+.gallery img {
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px
+} */
