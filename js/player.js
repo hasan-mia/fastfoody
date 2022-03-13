@@ -17,7 +17,8 @@ const teamList = (teams) => {
         // console.log(team, team.strTeam);
         const div = document.createElement('div');
         div.classList.add('col-lg-4')
-        div.classList.add('col-6')
+        div.classList.add('col-md-6')
+        div.classList.add('col-12')
         div.innerHTML = `
         <a href="#"  class="text-decoration-none text-black">
         <div class="card mb-3 border-pink" style="max-width: 540px;">
